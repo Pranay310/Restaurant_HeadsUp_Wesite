@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
 	margin: 0px;
@@ -18,7 +18,7 @@
 	position: absolute;
 	
 }
-																					/*NAV bar STARTS HERE*/
+														/*NAV bar STARTS HERE*/
 .nav-bar
 {	
 	position: fixed;
@@ -54,7 +54,7 @@
 	color: #F8B004;
 }
                                                 /*NAV bar ENDS HERE*/
-																								/*Home Div STARTS HERE*/
+											/*Home Div STARTS HERE*/
 .home-div
 {	
 	position: relative;
@@ -90,13 +90,10 @@
 	height: 200px;
 	width: 600px;
 	padding: 10px;
-	
-/*	border-radius: 30px;*/
 	position: absolute;
 	top: 270px;
 	left: 70px;
 	line-height: 60px;
-/*	font-family: Elephant;*/
 	font-weight: bolder;
 	font-size: 50px;
 	text-shadow: 0px 0px 30px black;
@@ -114,6 +111,14 @@
 	top: 420px;
 	left: 80px;
 	text-shadow: 0px 0px 30px black;
+	opacity: 1;
+	animation: fade-out linear;
+	animation-timeline: view();
+	animation-range: exit -500px;
+}
+@keyframes fade-out
+{
+	to { opacity:0; }
 }
 .home-img1 img
 {
@@ -136,6 +141,15 @@
 	top: 400px;
 	right: 550px;
 	z-index: 2;
+	scale: 0.01;
+	opacity: 0;
+	animation: fade-in-for-pan linear forwards;
+	animation-timeline: view();
+	animation-range:entry -200px;
+}
+@keyframes fade-in-for-pan
+{
+	to { scale:1; opacity: 2}
 }
 .home-img3 img
 {
@@ -181,7 +195,7 @@
 	border-color: #F8B004;
 }
                                                 /*Home Div Ends HERE*/
-																						/*Special Dish Div Starts HERE*/
+											/*Special Dish Div Starts HERE*/
 .special-dish-div
 {
 	position: relative;
@@ -199,6 +213,17 @@
 	background-size: cover;
 	filter: blur(5px);
 }
+.special-dish-div h5
+{
+	position: absolute;
+	top: 200px;
+	left: 510px;
+	height: 5%;
+	width: 10%;
+	font-size: 13px;
+	color: white;
+	z-index: 1;
+}
 .special-name
 {
 	height: 200px;
@@ -207,7 +232,7 @@
 	position: absolute;
 	line-height: 60px;
 	top: 220px;
-	left: 500px;
+	left: 490px;
 	font-weight: bolder;
 	font-size: 50px;
 	color: #F8B004;
@@ -236,7 +261,15 @@
 	box-shadow: 0px 0px 10px whitesmoke;
 	background-size: cover;
 	border-radius: 10px;
-
+	scale: 0.8;
+	opacity: 0;
+	animation: fade-in linear forwards;
+	animation-timeline: view();
+	animation-range: 200px 500px;
+}
+@keyframes fade-in
+{
+	to { scale:1; opacity:1; }
 }
 .empty img
 {	
@@ -248,5 +281,132 @@
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px whitesmoke;
 	z-index: 1;
+	scale: 0.8;
+	opacity: 0;
+	animation: fade-in linear forwards;
+	animation-timeline: view();
+	animation-range: 200px 500px;
 }
+
                                              /*Special Dish Div Ends HERE*/
+                                            /*Ingredients Div Starts HERE*/
+
+.ingredients-div
+{	
+	position: relative;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	width: 100vw;
+}
+.ingredients-div-img img
+{	
+	height: 100vh;
+	width: 100vw;
+	object-fit: fill;
+	filter: blur(5px);
+}
+.drink-img
+{
+	height: 200px;
+	width: 220px;
+	object-fit: fill;
+	position: absolute;
+	top: -50px;
+	right: 25%;
+	z-index: 2;
+	animation: zoom-in linear forwards;
+	animation-timeline: view();
+	animation-range: 100px 300px;
+}
+@keyframes zoom-in
+{
+	to { scale:3; }
+}
+.ingredients-div h1
+{	
+	position: absolute;
+	top: 10%;
+	left: 60%;
+	height: 10%;
+	width: 40%;
+	font-weight: bolder;
+	opacity: 0;
+	z-index: 1;
+/*	text-shadow: 0px 0px 10px black;*/
+	animation: left-to-right linear forwards;
+	animation-timeline: view();
+	animation-range: 100px 300px;
+}
+@keyframes left-to-right
+{
+	to { transform: translateX(-145.5%); color: black; opacity:1; }
+}
+.ingredients-div h6
+{	
+	position: absolute;
+	top: 6%;
+	left: 2%;
+	height: 5%;
+	width: 10%;
+	color: black;
+	z-index: 1;
+	text-shadow: 0px 0px 20px white;
+}
+.ingredients-div p
+{	
+	position: absolute;
+	top: 27%;
+	left: 2%;
+	height: 10%;
+	width: 40%;
+	font-size: 15px;
+	font-weight: bolder;
+	color: black;
+	z-index: 1;
+}
+.ingredients-div-table table
+{
+	position: absolute;
+	top: 40%;
+	left: 0px;
+	height: 50%;
+	width: 100%;
+	color: white;
+	z-index: 1;
+}
+.tr1 img
+{	
+	height: 250px;
+	width: 400px;
+	margin-top: 20px;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px black;
+	z-index: 1;
+	scale: 0.8;
+	opacity: 0;
+	animation: fade-in linear forwards;
+	animation-timeline: view();
+	animation-range: 100px 350px;
+}
+.tr td
+{	
+	padding-top: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-shadow: 0px 0px 20px black;
+}
+.tr2
+{
+	font-size: 25px;
+	font-weight: bolder;
+	color: #F8B004;
+}
+.gif
+{
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	right: 0px;
+}
