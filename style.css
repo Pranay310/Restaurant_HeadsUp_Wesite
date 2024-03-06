@@ -10,14 +10,23 @@
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 100%;
-	height: 100%;
+	background-color: black;
 }
 .all-sections
 {
 	position: absolute;
 	
 }
+
+html{
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+body::-webkit-scrollbar{
+	display: none;
+}
+
 														/*NAV bar STARTS HERE*/
 .nav-bar
 {	
@@ -298,6 +307,8 @@
 	left: 0px;
 	height: 100vh;
 	width: 100vw;
+	background-color: black;
+	margin-bottom: 50px;
 }
 .ingredients-div-img img
 {	
@@ -305,6 +316,7 @@
 	width: 100vw;
 	object-fit: fill;
 	filter: blur(5px);
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 .drink-img
 {
@@ -317,11 +329,11 @@
 	z-index: 2;
 	animation: zoom-in linear forwards;
 	animation-timeline: view();
-	animation-range: 100px 300px;
+	animation-range: 50px 500px;
 }
 @keyframes zoom-in
 {
-	to { scale:3; }
+	to { scale:2.5; }
 }
 .ingredients-div h1
 {	
@@ -340,7 +352,11 @@
 }
 @keyframes left-to-right
 {
-	to { transform: translateX(-145.5%); color: black; opacity:1; }
+	to { transform: translateX(-145.5%); color: white; opacity:1; }
+}
+.ingredients-div span
+{
+	color: black;
 }
 .ingredients-div h6
 {	
@@ -349,9 +365,8 @@
 	left: 2%;
 	height: 5%;
 	width: 10%;
-	color: black;
+	color: white;
 	z-index: 1;
-	text-shadow: 0px 0px 20px white;
 }
 .ingredients-div p
 {	
@@ -362,7 +377,7 @@
 	width: 40%;
 	font-size: 15px;
 	font-weight: bolder;
-	color: black;
+	color: whitesmoke;
 	z-index: 1;
 }
 .ingredients-div-table table
@@ -375,20 +390,58 @@
 	color: white;
 	z-index: 1;
 }
-.tr1 img
+.shine
 {	
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 250px;
 	width: 400px;
 	margin-top: 20px;
-	object-fit: cover;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px black;
-	z-index: 1;
-	scale: 0.8;
-	opacity: 0;
-	animation: fade-in linear forwards;
-	animation-timeline: view();
-	animation-range: 100px 350px;
+	position: relative;
+	overflow: hidden;
+}
+.shine1
+{
+	background-image: url(therealsork_ecological_food_meat_fruit_and_vegetables_dynamic_c_e75d4140-bb5c-41c2-bc82-f88b42303312.png);
+	background-size: 400px 300px;
+	background-repeat: no-repeat;
+	box-shadow: 0px 0px 10px white;
+}
+.shine2
+{
+	background-image: url(vince719_a_Chef_cooking_--ar_43_--style_raw_--stylize_750_8ce85707-001d-4aa1-b2bc-afefbff19faf.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: 0px 0px 10px white;
+}
+.shine3
+{
+	background-image: url(https://www.savoredjourneys.com/wp-content/uploads/2022/03/dining-experiences.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: 0px 0px 10px white;
+}
+.shine::before
+{
+	content: '';
+	position: absolute;
+	background-color: rgb(255, 255, 255, 0.3);
+	height: 250px;
+	width: 60px;
+	left: -127px;
+	transform: skew(-30deg);
+}
+.shine:hover:before
+{
+	animation: slide 1s;
+}
+@keyframes slide
+{
+	0%,100%{left: -127px;}
+	50%{left: 130%;}
 }
 .tr td
 {	
@@ -403,10 +456,38 @@
 	font-weight: bolder;
 	color: #F8B004;
 }
-.gif
+
+												/*Ingredients Div Ends HERE*/
+												 /*headsup Div Ends HERE*/
+.headsup
+{	
+	height: 150vh;
+	width: 100vw;
+	background-color: black;
+}
+.headsup-name
 {
-	height: 50px;
-	width: 50px;
-	position: absolute;
-	right: 0px;
+	font-size: 300px;
+	color: white;
+	font-weight: bolder;
+	font-variant: small-caps;
+}
+.headsup video
+{
+	margin-top: 30px;
+	margin-left: 30px;
+	border-radius: 20px;
+}
+.headsup-description
+{
+	position: relative;
+	top: -300px;
+	left: 700px;
+}
+.headsup-description h2
+{
+	font-size: 80px;
+	font-weight: bolder;
+	font-variant: small-caps;
+	color: #F8B004;
 }
