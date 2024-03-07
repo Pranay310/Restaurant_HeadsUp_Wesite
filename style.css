@@ -72,6 +72,7 @@ body::-webkit-scrollbar{
 	height: 100%;
 	background-image: url(https://cdn.midjourney.com/c9ef3ac4-c365-4c55-affb-9190de822714/0_0.webp);
 	background-size: cover;
+/*	clip-path: polygon(0 0, 100% 0, 100% 45%, 100% 100%, 29% 100%, 44% 39%);*/
 /*	backdrop-filter: blur(5px);*/
 /*	filter: blur(10px);*/
 /*	background: inherit;*/
@@ -461,7 +462,8 @@ body::-webkit-scrollbar{
 												 /*headsup Div Ends HERE*/
 .headsup
 {	
-	height: 150vh;
+	position: relative;
+	height: 250vh;
 	width: 100vw;
 	background-color: black;
 }
@@ -471,12 +473,16 @@ body::-webkit-scrollbar{
 	color: white;
 	font-weight: bolder;
 	font-variant: small-caps;
+	animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation-timeline: view();
+	animation-range: entry 100px  exit -40%;
 }
-.headsup video
+.firstvideo
 {
 	margin-top: 30px;
 	margin-left: 30px;
 	border-radius: 20px;
+	box-shadow: 0px 0px 10px white;
 }
 .headsup-description
 {
@@ -490,4 +496,73 @@ body::-webkit-scrollbar{
 	font-weight: bolder;
 	font-variant: small-caps;
 	color: #F8B004;
+}
+.headsup h5
+{	
+	position: absolute;
+	top: 45%;
+	padding: 50px;
+	color: white;
+}
+.stayupdated
+{	
+	position: absolute;
+	top: 60%;
+	font-size: 100px;
+	color: white;
+/*	animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;*/
+	animation-timeline: view();
+	animation-range: entry  exit -60%;
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.headsup h4
+{
+	position: absolute;
+	top: 80%;
+	font-size: 40px;
+	font-variant: small-caps;
+	color: #F8B004;
+}
+.headsup [type="email"]
+{	
+	position: absolute;
+	top: 88%;
+	left: 20px;
+	border-color: white;
+	background-color: transparent;
+	color: #F8B004;
+
+}
+.headsup [type="submit"]
+{	
+	width: 100px;
+	position: absolute;
+	top: 88%;
+	left: 210px;
+
+}
+.headsup h6
+{
+	position: absolute;
+	top: 90%;
+	left: 20px;
+	color: grey;
+}
+.secondvideo
+{
+	position: absolute;
+	top: 70%;
+	left: 55%;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px white;
 }
